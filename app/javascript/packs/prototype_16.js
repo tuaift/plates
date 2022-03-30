@@ -1,12 +1,12 @@
-const particlesQuantity = [74, 82, 110, 140]
+const particlesQuantity = [48, 64, 82, 96, 108, 120, 142]
 
 // [class-name, min-diameter, max-diameter, min-layer, max-layer]
 const flowerTypes = [
-  ['first', 100, 150, 2, 4],
-  ['second', 100, 150, 2, 4],
-  ['third', 100, 150, 2, 4],
-  ['fifth', 100, 150, 2, 4],
-  ['fourth', 100, 150, 2, 4],
+  ['first', 100, 200, 2, 4],
+  ['second', 100, 200, 2, 4],
+  ['third', 100, 200, 2, 4],
+  ['fifth', 100, 200, 2, 4],
+  ['fourth', 100, 200, 2, 4],
   // ['circle-black',              30,  70,   1, 1],
   ['sixth', 100, 150, 2, 4],
   // ['large-circle-black',        900, 1500, 1, 1],
@@ -21,36 +21,46 @@ function sample(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-function createFlower(frame) {
+function createFlower(additionalBackground) {
   const flowerElement = document.createElement('div')
   const flowerType = sample(flowerTypes)
   flowerElement.classList.add('flower')
 
-  const top = getRandomArbitrary(-100, 600)
-  const left = getRandomArbitrary(-100, 600)
+  const top = getRandomArbitrary(-100, 550)
+  const left = getRandomArbitrary(-100, 550)
   const size = getRandomArbitrary(flowerType[1], flowerType[2])
 
   flowerElement.style.top = [top, 'px'].join('')
   flowerElement.style.left = [left, 'px'].join('')
-  flowerElement.style.width = [size, 'px'].join('')
-  flowerElement.style.height = [size, 'px'].join('')
 
   flowerElement.style.zIndex = Math.floor(
     getRandomArbitrary(flowerType[3], flowerType[4])
   )
 
   flowerElement.classList.add(flowerType[0])
-
-  frame.appendChild(flowerElement)
+  additionalBackground.appendChild(flowerElement)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementsByClassName('prototype_16')[0]
+
   const frame = document.createElement('div')
   frame.classList.add('frame')
   container.appendChild(frame)
 
+  const background = document.createElement('div')
+  background.classList.add('frame_background')
+  frame.appendChild(background)
+
+  const text = document.createElement('h1')
+  text.classList.add('text')
+  background.appendChild(text)
+
+  const additionalBackground = document.createElement('div')
+  additionalBackground.classList.add('additional_background')
+  background.appendChild(additionalBackground)
+
   for (var i = 0; i < sample(particlesQuantity); i++) {
-    createFlower(frame)
+    createFlower(additionalBackground)
   }
 })

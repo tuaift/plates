@@ -1,5 +1,5 @@
-body {
-  background: #1e1e1c;
+body.prototype_body_16 {
+  background-color: #1e1e1c;
 }
 
 .prototype_16 {
@@ -14,14 +14,58 @@ body {
     height: 500px;
     transform: rotate(45deg);
     margin: auto;
-    background: #1e1e1c;
+    background: #e3ff36;
     overflow: hidden;
   }
+
+  .frame_background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .additional_background {
+    overflow: hidden;
+    position: relative;
+
+    height: 440px !important ;
+    width: 480px !important ;
+    border-radius: 22px;
+    background: #1e1e1c;
+    margin: 6px 0px 0px 0px;
+    clip: auto;
+  }
+
+  .text {
+    z-index: 100;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    width: 480px;
+    height: 36px;
+    background-color: #e3ff36;
+    margin: 0px;
+
+    border: 0.5px solid #1e1e1c;
+    box-sizing: border-box;
+    border-radius: 22px;
+  }
+
   .flower {
+    width: 40%;
+    height: 50%;
     position: absolute;
     // border-radius: 50%;
-    background-size: cover;
+    background-size: contain !important;
     transform: rotate(-45deg);
+    background-repeat: no-repeat;
+    background-position: center;
 
     &.first {
       background-image: image-url('flower_1.png');
