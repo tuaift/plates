@@ -1,10 +1,95 @@
 body.prototype_body_16 {
   background-color: #1e1e1c;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
 }
 
 .prototype_16 {
   display: flex;
-  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+  padding: 0px;
+  margin: 0px 0px 0px 0px;
+
+  .div_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -100px;
+    width: 400px;
+    .frame_header {
+      margin-top: -30px;
+      margin-bottom: -15px;
+      font-family: 'Panama';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 48px;
+      text-transform: uppercase;
+      color: #f4f3f1;
+    }
+
+    .frame_p {
+      font-family: 'Graphik Cy';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 28px;
+      letter-spacing: -0.025em;
+      color: #f4f3f1;
+    }
+  }
+
+  .button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 1380px;
+    padding: 0px 10px 0px 0px;
+
+    .restore_button {
+      background-image: image-url('refresh.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 61px;
+      width: 61px;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background-color: #ff8634;
+      border: 1.5px solid #ff8634;
+      border-radius: 50px;
+    }
+
+    .save_button {
+      margin: 0px 0px 0px 10px;
+
+      color: #1e1e1c;
+      font-family: 'Graphik Cy';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 28px;
+      text-transform: uppercase;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 3;
+      padding: 15px;
+      background: #f2f0ef;
+      border: 1.5px solid #f2f0ef;
+      border-radius: 50px;
+    }
+  }
 
   .frame {
     position: relative;
@@ -13,7 +98,7 @@ body.prototype_body_16 {
     min-width: 500px;
     height: 500px;
     transform: rotate(45deg);
-    margin: auto;
+    margin: 120px;
     background: #e3ff36;
     overflow: hidden;
 
@@ -35,6 +120,14 @@ body.prototype_body_16 {
 
     &.orange {
       background: #ff8634;
+      .text {
+        color: #1e1e1c;
+        border: 0.5px solid #1e1e1c;
+      }
+    }
+
+    &.pink {
+      background: #f4659b;
       .text {
         color: #1e1e1c;
         border: 0.5px solid #1e1e1c;

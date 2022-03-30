@@ -1,6 +1,6 @@
 const particlesQuantity = [48, 64, 82, 96, 108, 120, 142]
 
-const backgroundModel = ['yellow', 'blue', 'orange']
+const backgroundModel = ['yellow', 'blue', 'orange', 'pink']
 
 // [class-name, min-diameter, max-diameter, min-layer, max-layer]
 
@@ -61,35 +61,78 @@ function generateBackground() {
     setBackgroundColorClass(backgroundColorClass).then(resolve)
   })
 }
-function generateStory() {
+function generateColor() {
   generateBackground()
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementsByClassName('prototype_16')[0]
 
+  //Основной фрейм
   const frame = document.createElement('div')
   frame.classList.add('frame')
   container.appendChild(frame)
 
+  //Див для текста
+  const divText = document.createElement('div')
+  divText.classList.add('div_text')
+  container.appendChild(divText)
+
+  //Заголовок
+  const header = document.createElement('h1')
+  header.classList.add('frame_header')
+  header.innerText = 'Генеративная коллекция «Цветник»'
+  divText.appendChild(header)
+
+  //Объяснение
+  const paragraph = document.createElement('p')
+  paragraph.classList.add('frame_p')
+  paragraph.innerText =
+    ' Создай уникальный платок: подбери композицию и напиши свой текст — все это возможно в нашем сервисе!'
+  divText.appendChild(paragraph)
+
+  //Див с кнопками
+  const button = document.createElement('div')
+  button.classList.add('button')
+  container.appendChild(button)
+
+  //Кнопка обновления
+  const restoreButton = document.createElement('button')
+  restoreButton.classList.add('restore_button')
+  restoreButton.href = 'http://localhost:3000/prototypes/16'
+  button.appendChild(restoreButton)
+
+  //Кнопка сохранения
+  const saveButton = document.createElement('button')
+  saveButton.classList.add('save_button')
+  saveButton.innerText = 'Сохранить'
+  button.appendChild(saveButton)
+
+  //Фрейм текст + цветы
   const background = document.createElement('div')
   background.classList.add('frame_background')
   frame.appendChild(background)
 
+  //Форма текста
   const textElement = document.createElement('h1')
   textElement.classList.add('text')
 
+  //Текст
   const text = sample(texts)
   textElement.innerText = text
   textElement.contentEditable = true
   background.appendChild(textElement)
 
+  //Фрейм с генерацией цветкой
   const additionalBackground = document.createElement('div')
   additionalBackground.classList.add('additional_background')
   background.appendChild(additionalBackground)
 
+  //Генерация цветков
   for (var i = 0; i < sample(particlesQuantity); i++) {
     createFlower(additionalBackground)
   }
-  generateStory()
+
+  //Генерация цветков
+  generateColor()
 })
