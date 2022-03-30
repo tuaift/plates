@@ -1,0 +1,54 @@
+body {
+  background: #1e1e1c;
+}
+
+.prototype_16 {
+  display: flex;
+  margin: auto;
+
+  .frame {
+    position: relative;
+    width: 500px;
+    max-width: 500px;
+    min-width: 500px;
+    height: 500px;
+    transform: rotate(45deg);
+    margin: auto;
+    background: #1e1e1c;
+    overflow: hidden;
+  }
+  .flower {
+    position: absolute;
+    // border-radius: 50%;
+    background-size: cover;
+    transform: rotate(-45deg);
+
+    &.first {
+      background-image: image-url('flower_1.png');
+    }
+
+    &.second {
+      background-image: image-url('flower_2.png');
+    }
+
+    &.third {
+      background-image: image-url('flower_3.png');
+    }
+
+    &.fourth {
+      background-image: image-url('flower_4.png');
+    }
+
+    &.fifth {
+      background-image: image-url('flower_5.png');
+    }
+
+    &.sixth {
+      background-image: image-url('flower_6.png');
+    }
+
+    &.seventh {
+      background-image: image-url('flower_7.png');
+    }
+  }
+}
