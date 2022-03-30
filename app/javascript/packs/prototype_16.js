@@ -1,6 +1,9 @@
 const particlesQuantity = [48, 64, 82, 96, 108, 120, 142]
 
 // [class-name, min-diameter, max-diameter, min-layer, max-layer]
+
+const texts = ['bouquet 2022', 'цветы против пуль', 'цветник', 'поле весны']
+
 const flowerTypes = [
   ['first', 100, 200, 2, 4],
   ['second', 100, 200, 2, 4],
@@ -52,9 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
   background.classList.add('frame_background')
   frame.appendChild(background)
 
-  const text = document.createElement('h1')
-  text.classList.add('text')
-  background.appendChild(text)
+  const textElement = document.createElement('h1')
+  textElement.classList.add('text')
+
+  const text = sample(texts)
+  textElement.innerText = text
+  textElement.contentEditable = true
+  background.appendChild(textElement)
 
   const additionalBackground = document.createElement('div')
   additionalBackground.classList.add('additional_background')
