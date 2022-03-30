@@ -1,5 +1,7 @@
 const particlesQuantity = [48, 64, 82, 96, 108, 120, 142]
 
+const backgroundModel = ['yellow', 'blue', 'orange']
+
 // [class-name, min-diameter, max-diameter, min-layer, max-layer]
 
 const texts = ['bouquet 2022', 'цветы против пуль', 'цветник', 'поле весны']
@@ -24,6 +26,10 @@ function sample(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
+function getFrame() {
+  return document.getElementsByClassName('frame')[0]
+}
+
 function createFlower(additionalBackground) {
   const flowerElement = document.createElement('div')
   const flowerType = sample(flowerTypes)
@@ -42,6 +48,21 @@ function createFlower(additionalBackground) {
 
   flowerElement.classList.add(flowerType[0])
   additionalBackground.appendChild(flowerElement)
+}
+
+function generateBackground() {
+  // console.log('test')
+  return new Promise((resolve, reject) => {
+    const backgroundColorClass = sample(backgroundModel)
+    const frame = getFrame()
+    frame.classList.add(backgroundColorClass)
+    console.log('test')
+
+    setBackgroundColorClass(backgroundColorClass).then(resolve)
+  })
+}
+function generateStory() {
+  generateBackground()
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,4 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
   for (var i = 0; i < sample(particlesQuantity); i++) {
     createFlower(additionalBackground)
   }
+  generateStory()
 })

@@ -16,6 +16,30 @@ body.prototype_body_16 {
     margin: auto;
     background: #e3ff36;
     overflow: hidden;
+
+    &.yellow {
+      background: #e3ff36;
+      .text {
+        color: #1e1e1c;
+        border: 0.5px solid #1e1e1c;
+      }
+    }
+
+    &.blue {
+      background: #2345be;
+      .text {
+        color: #f2f0ef;
+        border: 0.5px solid #f2f0ef;
+      }
+    }
+
+    &.orange {
+      background: #ff8634;
+      .text {
+        color: #1e1e1c;
+        border: 0.5px solid #1e1e1c;
+      }
+    }
   }
 
   .frame_background {
@@ -54,7 +78,6 @@ body.prototype_body_16 {
     padding: 4px;
     width: 480px;
     height: 36px;
-    background-color: #e3ff36;
     margin: 0px;
 
     border: 0.5px solid #1e1e1c;
