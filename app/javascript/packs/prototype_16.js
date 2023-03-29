@@ -4,18 +4,13 @@ const backgroundModel = ['yellow', 'blue', 'orange', 'pink']
 
 // [class-name, min-diameter, max-diameter, min-layer, max-layer]
 
-const texts = ['bouquet 2022', 'цветы против пуль', 'цветник', 'поле весны']
+const texts = [' ', ' ', ' ', ' ']
 
 const flowerTypes = [
   ['first', 100, 200, 2, 4],
   ['second', 100, 200, 2, 4],
   ['third', 100, 200, 2, 4],
-  ['fifth', 100, 200, 2, 4],
-  ['fourth', 100, 200, 2, 4],
-  // ['circle-black',              30,  70,   1, 1],
-  ['sixth', 100, 150, 2, 4],
-  // ['large-circle-black',        900, 1500, 1, 1],
-  ['seventh', 100, 150, 2, 4]
+  ['fourth', 100, 200, 2, 4]
 ]
 
 function getRandomArbitrary(min, max) {
@@ -81,14 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
   //Заголовок
   const header = document.createElement('h1')
   header.classList.add('frame_header')
-  header.innerText = 'Генеративная коллекция «Цветник»'
+  header.innerText = '«ГАВРИШ»'
   divText.appendChild(header)
 
   //Объяснение
   const paragraph = document.createElement('p')
   paragraph.classList.add('frame_p')
   paragraph.innerText =
-    ' Создай уникальный платок: подбери композицию и напиши свой текст — все это возможно в нашем сервисе!'
+    'Спекулятивная серия тарелок, посвященная моей маме и ее любви к огороду'
   divText.appendChild(paragraph)
 
   //Див с кнопками
@@ -99,40 +94,41 @@ document.addEventListener('DOMContentLoaded', () => {
   //Кнопка обновления
   const restoreButton = document.createElement('button')
   restoreButton.classList.add('restore_button')
+  restore.innerText = 'СМОТРЕТЬ ЕЩЕ'
   restoreButton.href = 'http://localhost:3000/prototypes/16'
   button.appendChild(restoreButton)
 
   //Кнопка сохранения
   const saveButton = document.createElement('button')
   saveButton.classList.add('save_button')
-  saveButton.innerText = 'Сохранить'
+  saveButton.innerText = 'ПОКУПАЮ'
   button.appendChild(saveButton)
 
-  //Фрейм текст + цветы
+  //Фрейм овощи
   const background = document.createElement('div')
   background.classList.add('frame_background')
   frame.appendChild(background)
 
-  //Форма текста
-  const textElement = document.createElement('h1')
-  textElement.classList.add('text')
+  // //Форма текста
+  // const textElement = document.createElement('h1')
+  // textElement.classList.add('text')
+  //
+  // //Текст
+  // const text = sample(texts)
+  // textElement.innerText = text
+  // textElement.contentEditable = true
+  // background.appendChild(textElement)
 
-  //Текст
-  const text = sample(texts)
-  textElement.innerText = text
-  textElement.contentEditable = true
-  background.appendChild(textElement)
-
-  //Фрейм с генерацией цветкой
+  //Фрейм с генерацией овощей
   const additionalBackground = document.createElement('div')
   additionalBackground.classList.add('additional_background')
   background.appendChild(additionalBackground)
 
-  //Генерация цветков
+  //Генерация овощей
   for (var i = 0; i < sample(particlesQuantity); i++) {
     createFlower(additionalBackground)
   }
 
-  //Генерация цветков
+  //Генерация овощей
   generateColor()
 })
